@@ -101,6 +101,10 @@
         {
           "type": "SYMBOL",
           "name": "tagged_compound_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_compound_statement"
         }
       ]
     },
@@ -857,28 +861,12 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "node_tag"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "node_tag"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_newline"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "_newline"
         },
         {
           "type": "SYMBOL",
@@ -6453,6 +6441,7 @@
   ],
   "inline": [
     "_simple_statement",
+    "tagged_compound_statement",
     "_compound_statement",
     "_suite",
     "_expressions",

@@ -59,6 +59,7 @@ module.exports = grammar({
 
   supertypes: $ => [
     $._simple_statement,
+    //$.tagged_compound_statement,
     $._compound_statement,
     $.expression,
     $.primary_expression,
@@ -109,6 +110,7 @@ module.exports = grammar({
   */
     inline: $ => [
     $._simple_statement,
+    $.tagged_compound_statement,
     $._compound_statement,
     $._suite,
     $._expressions,
@@ -146,7 +148,7 @@ module.exports = grammar({
     _statement: $ => choice(
       $._simple_statements,
       $.tagged_compound_statement,
-      //$._compound_statement,
+      $._compound_statement,
     ),
 
     // Simple statements
@@ -300,9 +302,9 @@ module.exports = grammar({
     // Compound statements
 
     tagged_compound_statement: $ => seq(
-      optional($.node_tag),
-      optional($._newline),
-      $._compound_statement
+      $.node_tag,
+      $._newline,
+      $._compound_statement,
     ),
 
     _compound_statement: $ => choice(
