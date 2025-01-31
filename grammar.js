@@ -65,6 +65,7 @@ module.exports = grammar({
     $.primary_expression,
     $.pattern,
     $.parameter,
+    //$.node_tag,
   ],
 
   externals: $ => [
@@ -116,6 +117,7 @@ module.exports = grammar({
     $._expressions,
     $._left_hand_side,
     $.keyword_identifier,
+    //$.node_tag,
   ],
 
   word: $ => $.identifier,
