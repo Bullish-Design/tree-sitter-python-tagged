@@ -111,7 +111,7 @@ module.exports = grammar({
   */
     inline: $ => [
     $._simple_statement,
-    $.tagged_compound_statement,
+    //$.tagged_compound_statement,
     $._compound_statement,
     $._suite,
     $._expressions,
@@ -149,7 +149,7 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $._simple_statements,
-      $.tagged_compound_statement,
+      //$.tagged_compound_statement,
       $._compound_statement,
     ),
 
