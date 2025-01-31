@@ -100,7 +100,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_compound_statement"
+          "name": "tagged_compound_statement"
         }
       ]
     },
@@ -862,6 +862,18 @@
             {
               "type": "SYMBOL",
               "name": "node_tag"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_newline"
             },
             {
               "type": "BLANK"
