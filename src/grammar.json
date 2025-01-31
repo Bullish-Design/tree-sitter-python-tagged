@@ -100,7 +100,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "tagged_compound_statement"
+          "name": "_compound_statement"
         }
       ]
     },
