@@ -39,11 +39,10 @@
   "devDependencies": {
     "eslint": "^9.17.0",
     "eslint-config-treesitter": "^1.0.2",
-    "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.24.5"
+    "prebuildify": "^6.0.1"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.22.1"
+    "tree-sitter": "^0.22.4"
   },
   "peerDependenciesMeta": {
     "tree-sitter": {

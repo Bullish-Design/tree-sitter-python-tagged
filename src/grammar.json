@@ -10,6 +10,87 @@
         "name": "_statement"
       }
     },
+    "node_tag": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 2,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "##"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[^:]+"
+              },
+              "named": false,
+              "value": "db_id"
+            },
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[^|]+"
+              },
+              "named": false,
+              "value": "db_version_id"
+            },
+            {
+              "type": "STRING",
+              "value": "|"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[^|]+"
+              },
+              "named": false,
+              "value": "db_version"
+            },
+            {
+              "type": "STRING",
+              "value": "|"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[^:]+"
+              },
+              "named": false,
+              "value": "db_type"
+            },
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[^%]+"
+              },
+              "named": false,
+              "value": "db_name"
+            },
+            {
+              "type": "STRING",
+              "value": "##"
+            }
+          ]
+        }
+      }
+    },
     "_statement": {
       "type": "CHOICE",
       "members": [
@@ -19,7 +100,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_compound_statement"
+          "name": "tagged_compound_statement"
         }
       ]
     },
@@ -57,6 +138,18 @@
             {
               "type": "STRING",
               "value": ";"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "node_tag"
             },
             {
               "type": "BLANK"
@@ -759,6 +852,27 @@
         "type": "STRING",
         "value": "continue"
       }
+    },
+    "tagged_compound_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "node_tag"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_compound_statement"
+        }
+      ]
     },
     "_compound_statement": {
       "type": "CHOICE",
@@ -6299,6 +6413,10 @@
     {
       "type": "SYMBOL",
       "name": "string_end"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "node_tag"
     },
     {
       "type": "SYMBOL",

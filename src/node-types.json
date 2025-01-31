@@ -746,11 +746,15 @@
       "required": false,
       "types": [
         {
-          "type": "_compound_statement",
+          "type": "_simple_statement",
           "named": true
         },
         {
-          "type": "_simple_statement",
+          "type": "node_tag",
+          "named": true
+        },
+        {
+          "type": "tagged_compound_statement",
           "named": true
         }
       ]
@@ -2437,11 +2441,15 @@
       "required": false,
       "types": [
         {
-          "type": "_compound_statement",
+          "type": "_simple_statement",
           "named": true
         },
         {
-          "type": "_simple_statement",
+          "type": "node_tag",
+          "named": true
+        },
+        {
+          "type": "tagged_compound_statement",
           "named": true
         }
       ]
@@ -2891,6 +2899,25 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "tagged_compound_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "_compound_statement",
+          "named": true
+        },
+        {
+          "type": "node_tag",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -3679,6 +3706,10 @@
   {
     "type": "match",
     "named": false
+  },
+  {
+    "type": "node_tag",
+    "named": true
   },
   {
     "type": "none",

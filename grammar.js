@@ -74,6 +74,7 @@ module.exports = grammar({
     $._string_content,
     $.escape_interpolation,
     $.string_end,
+    $.node_tag,
 
     // Mark comments as external tokens so that the external scanner is always
     // invoked, even if no external token is expected. This allows for better
@@ -90,7 +91,23 @@ module.exports = grammar({
     'except',
   ],
 
-  inline: $ => [
+  
+
+  /*
+  inline_tagged: $ => prec.right(2, seq(
+          alias($.inline, ("tagged_" + $.inline)), //,
+          $.node_tag
+          //optional($._newline)
+        )),
+
+  tagged_block: $ => prec(7,
+          seq(
+            $.node_tag,
+            $._newline,
+            $._block_not_section)
+        ),
+  */
+    inline: $ => [
     $._simple_statement,
     $._compound_statement,
     $._suite,
@@ -102,11 +119,34 @@ module.exports = grammar({
   word: $ => $.identifier,
 
   rules: {
+
+    
+
     module: $ => repeat($._statement),
+
+    node_tag: $ => token(prec(2,seq(
+      '##',
+      alias(/[^:]+/, "db_id"),   // id
+      ':',                      // id separator
+      alias(/[^|]+/, "db_version_id"),   // version id
+      '|',
+      alias(/[^|]+/, "db_version"),   // version
+      '|',
+      alias(/[^:]+/, "db_type"),   // type
+      ':',                      // id separator
+      alias(/[^%]+/, "db_name"),   // name
+      '##'
+    ))),
+
+
+
+
+
 
     _statement: $ => choice(
       $._simple_statements,
-      $._compound_statement,
+      $.tagged_compound_statement,
+      //$._compound_statement,
     ),
 
     // Simple statements
@@ -114,6 +154,7 @@ module.exports = grammar({
     _simple_statements: $ => seq(
       sep1($._simple_statement, SEMICOLON),
       optional(SEMICOLON),
+      optional($.node_tag),
       $._newline,
     ),
 
@@ -258,6 +299,11 @@ module.exports = grammar({
 
     // Compound statements
 
+    tagged_compound_statement: $ => seq(
+      optional($.node_tag),
+      $._compound_statement
+    ),
+
     _compound_statement: $ => choice(
       $.if_statement,
       $.for_statement,
@@ -270,7 +316,8 @@ module.exports = grammar({
       $.match_statement,
     ),
 
-    if_statement: $ => seq(
+
+        if_statement: $ => seq(
       'if',
       field('condition', $.expression),
       ':',

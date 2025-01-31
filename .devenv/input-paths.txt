@@ -1,0 +1,3 @@
+/home/andrew/Documents/Projects/tree-sitter-python-tagged/devenv.lock
+/home/andrew/Documents/Projects/tree-sitter-python-tagged/devenv.nix
+/home/andrew/Documents/Projects/tree-sitter-python-tagged/devenv.yaml

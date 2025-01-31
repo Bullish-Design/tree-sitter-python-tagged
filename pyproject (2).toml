@@ -1,0 +1,11 @@
+[project]
+name = "tree-sitter-obsidian"
+version = "0.0.95"
+dynamic = ["dependencies"]
+
+[project.scripts]
+#config = "tree-sitter-obsidian.src.config:print_envs"
+#main = "tree-sitter-obsidian.src.main:main"
+
+[tool.setuptools.dynamic]
+dependencies = { file = "requirements.txt" }
