@@ -40,7 +40,7 @@ module.exports = grammar({
   name: 'python',
 
   extras: $ => [
-    $.node_tag,
+    //$.node_tag,
     $.comment,
     /[\s\f\uFEFF\u2060\u200B]|\r?\n/,
     $.line_continuation,
