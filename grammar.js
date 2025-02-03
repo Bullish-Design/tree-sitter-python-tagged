@@ -618,7 +618,7 @@ module.exports = grammar({
     ),
 
     block: $ => seq(
-      repeat($._statement),
+      repeat(choice($._statement, $._tagged_statement)),
       $._dedent,
     ),
 
