@@ -181,7 +181,7 @@ module.exports = grammar({
       $.nonlocal_statement,
       $.exec_statement,
       $.type_alias_statement,
-      $.node_tag,
+      //$.node_tag,
     ),
 
     import_statement: $ => seq(
