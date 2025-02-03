@@ -85,7 +85,7 @@ module.exports = grammar({
     $._string_content,
     $.escape_interpolation,
     $.string_end,
-    //$.node_tag,
+    $.node_tag,
 
     // Mark comments as external tokens so that the external scanner is always
     // invoked, even if no external token is expected. This allows for better
