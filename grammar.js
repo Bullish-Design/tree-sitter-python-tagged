@@ -129,11 +129,12 @@ module.exports = grammar({
     $._left_hand_side,
     $.keyword_identifier,
     //$.comment,
-    //$.node_tag,
+    //$._node_tag,
     //$._compound_node_tag,
   ],
 
   word: $ => $.identifier,
+  node_tag: $ => $._node_tag,
 
   rules: {
 
