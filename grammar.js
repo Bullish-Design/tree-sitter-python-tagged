@@ -85,7 +85,7 @@ module.exports = grammar({
     $._string_content,
     $.escape_interpolation,
     $.string_end,
-    $.node_tag,
+    //$.node_tag,
 
     // Mark comments as external tokens so that the external scanner is always
     // invoked, even if no external token is expected. This allows for better
@@ -121,9 +121,9 @@ module.exports = grammar({
   inline: $ => [
     $._simple_statement,
     //$.tagged_compound_statement,
-    $._tagged_simple_statements,
+    //$._tagged_simple_statements,
     $._compound_statement,
-    $._tagged_compound_statement,
+    //$._tagged_compound_statement,
     $._suite,
     $._expressions,
     $._left_hand_side,
@@ -165,10 +165,8 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $._simple_statements,
-      $._tagged_simple_statements,
-
-      //$._compound_node_tag,
-      $._tagged_compound_statement,
+      //$._tagged_simple_statements,
+      //$._tagged_compound_statement,
       $._compound_statement,
     ),
 

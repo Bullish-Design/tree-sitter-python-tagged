@@ -113,14 +113,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_tagged_simple_statements"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_tagged_compound_statement"
-        },
-        {
-          "type": "SYMBOL",
           "name": "_compound_statement"
         }
       ]
@@ -6471,10 +6463,6 @@
     },
     {
       "type": "SYMBOL",
-      "name": "node_tag"
-    },
-    {
-      "type": "SYMBOL",
       "name": "comment"
     },
     {
@@ -6496,9 +6484,7 @@
   ],
   "inline": [
     "_simple_statement",
-    "_tagged_simple_statements",
     "_compound_statement",
-    "_tagged_compound_statement",
     "_suite",
     "_expressions",
     "_left_hand_side",
