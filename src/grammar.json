@@ -2412,19 +2412,6 @@
             "value": "block"
           },
           {
-            "type": "PREC",
-            "value": 25,
-            "content": {
-              "type": "ALIAS",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_tagged_simple_statements"
-              },
-              "named": true,
-              "value": "block"
-            }
-          },
-          {
             "type": "SEQ",
             "members": [
               {
