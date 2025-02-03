@@ -1265,7 +1265,7 @@ module.exports = grammar({
       $.primary_expression,
     )),
 
-    comment: $ => token(choice(
+    comment: _ => token(choice(
       prec(5,
         seq(
         '##',
