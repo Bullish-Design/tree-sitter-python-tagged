@@ -6330,6 +6330,10 @@
   },
   "extras": [
     {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
       "type": "PATTERN",
       "value": "[\\s\\f\\uFEFF\\u2060\\u200B]|\\r?\\n"
     },

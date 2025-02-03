@@ -3581,6 +3581,10 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "continue",
     "named": false
   },
