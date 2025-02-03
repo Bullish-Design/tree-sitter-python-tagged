@@ -13,8 +13,8 @@
     "node_tag": {
       "type": "TOKEN",
       "content": {
-        "type": "PREC",
-        "value": 2,
+        "type": "PREC_RIGHT",
+        "value": 5,
         "content": {
           "type": "SEQ",
           "members": [
@@ -6340,10 +6340,6 @@
     {
       "type": "SYMBOL",
       "name": "line_continuation"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "node_tag"
     }
   ],
   "conflicts": [

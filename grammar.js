@@ -43,7 +43,7 @@ module.exports = grammar({
     $.comment,
     /[\s\f\uFEFF\u2060\u200B]|\r?\n/,
     $.line_continuation,
-    $.node_tag,
+    //$.node_tag,
   ],
 
   conflicts: $ => [
@@ -129,7 +129,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => token(prec(2,seq(
+    node_tag: $ => token(prec.right(5,seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
