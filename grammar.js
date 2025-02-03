@@ -151,7 +151,7 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $._simple_statements,
-      $.tagged_compound_statement,
+      $._tagged_compound_statement,
       $._compound_statement,
     ),
 
@@ -305,7 +305,7 @@ module.exports = grammar({
 
     // Compound statements
 
-    tagged_compound_statement: $ => seq(
+    _tagged_compound_statement: $ => seq(
       $.node_tag,
       $._newline,
       $._compound_statement,

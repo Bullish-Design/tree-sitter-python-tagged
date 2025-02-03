@@ -100,7 +100,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "tagged_compound_statement"
+          "name": "_tagged_compound_statement"
         },
         {
           "type": "SYMBOL",
@@ -857,7 +857,7 @@
         "value": "continue"
       }
     },
-    "tagged_compound_statement": {
+    "_tagged_compound_statement": {
       "type": "SEQ",
       "members": [
         {
