@@ -2478,6 +2478,11 @@
     }
   },
   {
+    "type": "node_tag",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "nonlocal_statement",
     "named": true,
     "fields": {},
@@ -3369,6 +3374,10 @@
     "named": false
   },
   {
+    "type": "##",
+    "named": false
+  },
+  {
     "type": "%",
     "named": false
   },
@@ -3577,11 +3586,27 @@
     "named": false
   },
   {
-    "type": "comment",
-    "named": true
+    "type": "continue",
+    "named": false
   },
   {
-    "type": "continue",
+    "type": "db_id",
+    "named": false
+  },
+  {
+    "type": "db_name",
+    "named": false
+  },
+  {
+    "type": "db_type",
+    "named": false
+  },
+  {
+    "type": "db_version",
+    "named": false
+  },
+  {
+    "type": "db_version_id",
     "named": false
   },
   {
@@ -3683,10 +3708,6 @@
   {
     "type": "match",
     "named": false
-  },
-  {
-    "type": "node_tag",
-    "named": true
   },
   {
     "type": "none",

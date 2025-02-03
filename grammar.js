@@ -44,8 +44,8 @@ module.exports = grammar({
   name: 'python',
 
   extras: $ => [
-    $.node_tag,
-    $.comment,
+    //$.node_tag,
+    //$.comment,
     /[\s\f\uFEFF\u2060\u200B]|\r?\n/,
     $.line_continuation,
   ],
@@ -83,14 +83,14 @@ module.exports = grammar({
     $._string_content,
     $.escape_interpolation,
     $.string_end,
-    $.node_tag,
+    //$.node_tag,
 
     // Mark comments as external tokens so that the external scanner is always
     // invoked, even if no external token is expected. This allows for better
     // error recovery, because the external scanner can maintain the overall
     // structure by returning dedent tokens whenever a dedent occurs, even
     // if no dedent is expected.
-    $.comment,
+    //$.comment,
 
     // Allow the external scanner to check for the validity of closing brackets
     // so that it can avoid returning dedent tokens between brackets.
@@ -136,7 +136,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => token.immediate(prec(PREC.node_tag,seq(
+    node_tag: $ => seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
@@ -148,7 +148,7 @@ module.exports = grammar({
       ':',                      // id separator
       alias(/[^%]+/, "db_name"),   // name
       '##'
-    ))),
+    ),
 
 
     _compound_node_tag: $ => prec.right(7,seq(
@@ -1264,7 +1264,7 @@ module.exports = grammar({
       $.primary_expression,
     )),
 
-    comment: $ => token(seq('#', /.*/)),
+    comment: $ => choice(prec(5,$.node_tag),seq('#', /.*/)),
 
     line_continuation: _ => token(seq('\\', choice(seq(optional('\r'), '\n'), '\0'))),
 
