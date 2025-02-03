@@ -119,7 +119,7 @@ module.exports = grammar({
     $._expressions,
     $._left_hand_side,
     $.keyword_identifier,
-    //$.node_tag,
+    $._compound_node_tag,
   ],
 
   word: $ => $.identifier,
@@ -145,7 +145,7 @@ module.exports = grammar({
     ))),
 
 
-    _compound_node_tag: $ => prec(5,seq(
+    _compound_node_tag: $ => prec.right(7,seq(
       $.node_tag,
       $._newline,
     )),

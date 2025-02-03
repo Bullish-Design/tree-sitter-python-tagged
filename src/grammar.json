@@ -92,8 +92,8 @@
       }
     },
     "_compound_node_tag": {
-      "type": "PREC",
-      "value": 5,
+      "type": "PREC_RIGHT",
+      "value": 7,
       "content": {
         "type": "SEQ",
         "members": [
@@ -6458,7 +6458,8 @@
     "_suite",
     "_expressions",
     "_left_hand_side",
-    "keyword_identifier"
+    "keyword_identifier",
+    "_compound_node_tag"
   ],
   "supertypes": [
     "_simple_statement",
