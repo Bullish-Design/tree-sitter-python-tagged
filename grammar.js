@@ -184,7 +184,7 @@ module.exports = grammar({
       $.nonlocal_statement,
       $.exec_statement,
       $.type_alias_statement,
-      $.compound_node_tag,
+      //$.compound_node_tag,
       //$.node_tag,
     ),
 
