@@ -6378,10 +6378,6 @@
     [
       "match_statement",
       "primary_expression"
-    ],
-    [
-      "comment",
-      "node_tag"
     ]
   ],
   "precedences": [],
@@ -6413,10 +6409,6 @@
     {
       "type": "SYMBOL",
       "name": "string_end"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "node_tag"
     },
     {
       "type": "SYMBOL",

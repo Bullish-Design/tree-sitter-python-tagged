@@ -56,7 +56,7 @@ module.exports = grammar({
     [$.print_statement, $.primary_expression],
     [$.type_alias_statement, $.primary_expression],
     [$.match_statement, $.primary_expression],
-    [$.comment, $.node_tag],
+    //[$.comment, $.node_tag],
   ],
 
   supertypes: $ => [
@@ -78,7 +78,7 @@ module.exports = grammar({
     $._string_content,
     $.escape_interpolation,
     $.string_end,
-    $.node_tag,
+    //$.node_tag,
 
     // Mark comments as external tokens so that the external scanner is always
     // invoked, even if no external token is expected. This allows for better
