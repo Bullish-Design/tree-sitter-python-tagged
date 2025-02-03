@@ -2380,8 +2380,17 @@
         {
           "type": "ALIAS",
           "content": {
-            "type": "SYMBOL",
-            "name": "_simple_statements"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_simple_statements"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_tagged_simple_statements"
+              }
+            ]
           },
           "named": true,
           "value": "block"

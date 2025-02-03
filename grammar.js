@@ -606,7 +606,7 @@ module.exports = grammar({
     ),
 
     _suite: $ => choice(
-      alias($._simple_statements, $.block),
+      alias(choice($._simple_statements, $._tagged_simple_statements), $.block),
       seq($._indent, $.block),
       alias($._newline, $.block),
     ),
