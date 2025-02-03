@@ -91,16 +91,25 @@
         }
       }
     },
+    "compound_node_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "node_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
     "_statement": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
           "name": "_simple_statements"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_tagged_compound_statement"
         },
         {
           "type": "SYMBOL",
@@ -142,18 +151,6 @@
             {
               "type": "STRING",
               "value": ";"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "node_tag"
             },
             {
               "type": "BLANK"
@@ -232,6 +229,10 @@
         {
           "type": "SYMBOL",
           "name": "type_alias_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "node_tag"
         }
       ]
     },
