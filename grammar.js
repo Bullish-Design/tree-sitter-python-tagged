@@ -141,7 +141,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => token(seq(
+    _node_tag: $ => token(seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
@@ -157,7 +157,7 @@ module.exports = grammar({
 
 
     _compound_node_tag: $ => prec.right(7,seq(
-      $.node_tag,
+      $._node_tag,
       $._newline,
     )),
 
@@ -190,7 +190,7 @@ module.exports = grammar({
 
     _tagged_simple_statement: $ => seq(
       $._simple_statement,
-      $.node_tag,
+      $._node_tag,
       ),
 
     _simple_statement: $ => choice(
@@ -337,7 +337,7 @@ module.exports = grammar({
     // Compound statements
 
     _tagged_compound_statement: $ => seq(
-      $.node_tag,
+      $._node_tag,
       $._newline,
       $._compound_statement,
     ),

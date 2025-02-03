@@ -10,7 +10,7 @@
         "name": "_statement"
       }
     },
-    "node_tag": {
+    "_node_tag": {
       "type": "TOKEN",
       "content": {
         "type": "SEQ",
@@ -95,7 +95,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "node_tag"
+            "name": "_node_tag"
           },
           {
             "type": "SYMBOL",
@@ -222,7 +222,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "node_tag"
+          "name": "_node_tag"
         }
       ]
     },
@@ -922,7 +922,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "node_tag"
+          "name": "_node_tag"
         },
         {
           "type": "SYMBOL",
