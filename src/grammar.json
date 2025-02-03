@@ -233,10 +233,6 @@
         {
           "type": "SYMBOL",
           "name": "type_alias_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "node_tag"
         }
       ]
     },
@@ -6446,7 +6442,8 @@
     "_suite",
     "_expressions",
     "_left_hand_side",
-    "keyword_identifier"
+    "keyword_identifier",
+    "node_tag"
   ],
   "supertypes": [
     "_simple_statement",
