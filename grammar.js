@@ -66,7 +66,9 @@ module.exports = grammar({
   supertypes: $ => [
     $._simple_statement,
     //$.tagged_compound_statement,
+    //$._tagged_simple_statements,
     $._compound_statement,
+    //$._tagged_compound_statement,
     $.expression,
     $.primary_expression,
     $.pattern,
