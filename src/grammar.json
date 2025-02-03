@@ -6492,6 +6492,10 @@
       "name": "string_end"
     },
     {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
       "type": "STRING",
       "value": "]"
     },
