@@ -121,6 +121,7 @@ module.exports = grammar({
     //$.tagged_compound_statement,
     $._tagged_simple_statements,
     $._compound_statement,
+    $._tagged_compound_statement,
     $._suite,
     $._expressions,
     $._left_hand_side,
