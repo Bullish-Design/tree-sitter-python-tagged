@@ -1264,7 +1264,7 @@ module.exports = grammar({
       $.primary_expression,
     )),
 
-    comment: $ => choice(prec(5,$.node_tag),seq('#', /.*/)),
+    comment: $ => token(choice(prec(5,$.node_tag),seq('#', /.*/))),
 
     line_continuation: _ => token(seq('\\', choice(seq(optional('\r'), '\n'), '\0'))),
 
