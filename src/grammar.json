@@ -6340,10 +6340,6 @@
     {
       "type": "SYMBOL",
       "name": "line_continuation"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "node_tag"
     }
   ],
   "conflicts": [
