@@ -6417,6 +6417,10 @@
     },
     {
       "type": "SYMBOL",
+      "name": "node_tag"
+    },
+    {
+      "type": "SYMBOL",
       "name": "comment"
     },
     {
