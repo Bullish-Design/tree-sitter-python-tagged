@@ -86,10 +86,6 @@
         "named": true
       },
       {
-        "type": "node_tag",
-        "named": true
-      },
-      {
         "type": "nonlocal_statement",
         "named": true
       },
@@ -2478,11 +2474,6 @@
     }
   },
   {
-    "type": "node_tag",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "nonlocal_statement",
     "named": true,
     "fields": {},
@@ -3374,10 +3365,6 @@
     "named": false
   },
   {
-    "type": "##",
-    "named": false
-  },
-  {
     "type": "%",
     "named": false
   },
@@ -3587,26 +3574,6 @@
   },
   {
     "type": "continue",
-    "named": false
-  },
-  {
-    "type": "db_id",
-    "named": false
-  },
-  {
-    "type": "db_name",
-    "named": false
-  },
-  {
-    "type": "db_type",
-    "named": false
-  },
-  {
-    "type": "db_version",
-    "named": false
-  },
-  {
-    "type": "db_version_id",
     "named": false
   },
   {
