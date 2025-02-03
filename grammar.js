@@ -32,6 +32,7 @@ const PREC = {
   unary: 20,
   power: 21,
   call: 22,
+  node_tag: 23,
 };
 
 const SEMICOLON = ';';
