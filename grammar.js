@@ -171,7 +171,7 @@ module.exports = grammar({
     _simple_statements: $ => seq(
       sep1($._simple_statement, SEMICOLON),
       optional(SEMICOLON),
-      optional($.node_tag),
+      //optional($.node_tag),
       $._newline,
     ),
 
@@ -193,7 +193,7 @@ module.exports = grammar({
       $.exec_statement,
       $.type_alias_statement,
       //$.compound_node_tag,
-      //$.node_tag,
+      $.node_tag,
     ),
 
     import_statement: $ => seq(
