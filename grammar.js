@@ -145,7 +145,7 @@ module.exports = grammar({
     ))),
 
 
-    compound_node_tag: $ => prec(5,seq(
+    _compound_node_tag: $ => prec(5,seq(
       $.node_tag,
       $._newline,
     )),
@@ -154,6 +154,7 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $._simple_statements,
+      $._compound_node_tag,
       //$._tagged_compound_statement,
       $._compound_statement,
     ),

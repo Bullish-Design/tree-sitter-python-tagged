@@ -91,7 +91,7 @@
         }
       }
     },
-    "compound_node_tag": {
+    "_compound_node_tag": {
       "type": "PREC",
       "value": 5,
       "content": {
@@ -114,6 +114,10 @@
         {
           "type": "SYMBOL",
           "name": "_simple_statements"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_compound_node_tag"
         },
         {
           "type": "SYMBOL",
