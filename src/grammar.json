@@ -2397,49 +2397,57 @@
       ]
     },
     "_suite": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_simple_statements"
-          },
-          "named": true,
-          "value": "block"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_tagged_simple_statements"
-          },
-          "named": true,
-          "value": "block"
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
               "type": "SYMBOL",
-              "name": "_indent"
+              "name": "_simple_statements"
             },
-            {
-              "type": "SYMBOL",
-              "name": "block"
-            }
-          ]
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_newline"
+            "named": true,
+            "value": "block"
           },
-          "named": true,
-          "value": "block"
-        }
-      ]
+          {
+            "type": "PREC",
+            "value": 25,
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_tagged_simple_statements"
+              },
+              "named": true,
+              "value": "block"
+            }
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_indent"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "block"
+              }
+            ]
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_newline"
+            },
+            "named": true,
+            "value": "block"
+          }
+        ]
+      }
     },
     "block": {
       "type": "SEQ",

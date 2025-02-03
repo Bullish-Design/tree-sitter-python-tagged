@@ -610,12 +610,12 @@ module.exports = grammar({
       $._newline,
     ),
 
-    _suite: $ => choice(
+    _suite: $ => prec.right(choice(
       alias($._simple_statements, $.block),
-      alias($._tagged_simple_statements, $.block),
+      prec(25,alias($._tagged_simple_statements, $.block)),
       seq($._indent, $.block),
       alias($._newline, $.block),
-    ),
+    )),
 
     block: $ => seq(
       repeat(choice($._statement, $._tagged_statement)),
