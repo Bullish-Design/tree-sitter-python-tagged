@@ -67,6 +67,7 @@ module.exports = grammar({
     $.primary_expression,
     $.pattern,
     $.parameter,
+    $.node_tag,
     //$._compound_node_tag,
   ],
 
