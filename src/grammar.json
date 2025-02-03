@@ -11,7 +11,7 @@
       }
     },
     "node_tag": {
-      "type": "TOKEN",
+      "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "SEQ",
         "members": [

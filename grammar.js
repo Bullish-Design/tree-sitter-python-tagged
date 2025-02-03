@@ -133,7 +133,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => token(seq(
+    node_tag: $ => token.immediate(seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
