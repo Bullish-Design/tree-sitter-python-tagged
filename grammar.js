@@ -617,10 +617,10 @@ module.exports = grammar({
       alias($._newline, $.block),
     )),
 
-    block: $ => seq(
+    block: $ => prec.right(seq(
       repeat(choice($._statement, $._tagged_statement)),
       $._dedent,
-    ),
+    )),
 
     expression_list: $ => prec.right(seq(
       $.expression,
