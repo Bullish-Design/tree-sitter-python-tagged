@@ -6506,7 +6506,7 @@
   ],
   "inline": [
     "_simple_statement",
-    "_tagged_simple_statements",
+    "_tagged_simple_statement",
     "_compound_statement",
     "_suite",
     "_expressions",
