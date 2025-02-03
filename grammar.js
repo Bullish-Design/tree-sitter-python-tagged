@@ -43,6 +43,7 @@ module.exports = grammar({
     $.comment,
     /[\s\f\uFEFF\u2060\u200B]|\r?\n/,
     $.line_continuation,
+    $.node_tag,
   ],
 
   conflicts: $ => [
@@ -159,7 +160,7 @@ module.exports = grammar({
     _simple_statements: $ => seq(
       sep1($._simple_statement, SEMICOLON),
       optional(SEMICOLON),
-      optional($.node_tag),
+      //optional($.node_tag),
       $._newline,
     ),
 
@@ -180,6 +181,7 @@ module.exports = grammar({
       $.nonlocal_statement,
       $.exec_statement,
       $.type_alias_statement,
+      $.node_tag,
     ),
 
     import_statement: $ => seq(

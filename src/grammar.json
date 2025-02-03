@@ -145,18 +145,6 @@
           ]
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "node_tag"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
           "type": "SYMBOL",
           "name": "_newline"
         }
@@ -228,6 +216,10 @@
         {
           "type": "SYMBOL",
           "name": "type_alias_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "node_tag"
         }
       ]
     },
@@ -6340,6 +6332,10 @@
     {
       "type": "SYMBOL",
       "name": "line_continuation"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "node_tag"
     }
   ],
   "conflicts": [

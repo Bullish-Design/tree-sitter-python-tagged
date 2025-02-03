@@ -86,6 +86,10 @@
         "named": true
       },
       {
+        "type": "node_tag",
+        "named": true
+      },
+      {
         "type": "nonlocal_statement",
         "named": true
       },
@@ -751,10 +755,6 @@
         },
         {
           "type": "_simple_statement",
-          "named": true
-        },
-        {
-          "type": "node_tag",
           "named": true
         }
       ]
@@ -2446,10 +2446,6 @@
         },
         {
           "type": "_simple_statement",
-          "named": true
-        },
-        {
-          "type": "node_tag",
           "named": true
         }
       ]
