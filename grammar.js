@@ -186,7 +186,7 @@ module.exports = grammar({
       $.exec_statement,
       $.type_alias_statement,
       //$.compound_node_tag,
-      //$.node_tag,
+      $.node_tag,
     ),
 
     import_statement: $ => seq(
