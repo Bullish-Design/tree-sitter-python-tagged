@@ -113,10 +113,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_compound_node_tag"
-        },
-        {
-          "type": "SYMBOL",
           "name": "_compound_statement"
         }
       ]
@@ -155,18 +151,6 @@
             {
               "type": "STRING",
               "value": ";"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "node_tag"
             },
             {
               "type": "BLANK"
