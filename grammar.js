@@ -323,7 +323,7 @@ module.exports = grammar({
     ),
 
 
-        if_statement: $ => seq(
+    if_statement: $ => seq(
       'if',
       field('condition', $.expression),
       ':',
