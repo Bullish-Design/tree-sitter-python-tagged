@@ -6,8 +6,17 @@
     "module": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "_statement"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_statement"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_tagged_statement"
+          }
+        ]
       }
     },
     "_node_tag": {
@@ -118,6 +127,19 @@
         {
           "type": "SYMBOL",
           "name": "_compound_statement"
+        }
+      ]
+    },
+    "_tagged_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_tagged_simple_statements"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_tagged_compound_statement"
         }
       ]
     },
