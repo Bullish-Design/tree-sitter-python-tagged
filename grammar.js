@@ -150,7 +150,7 @@ module.exports = grammar({
     _statement: $ => choice(
       $._simple_statements,
       //$.tagged_compound_statement,
-      $.node_tag,
+      //$.node_tag,
       $._compound_statement,
     ),
 
