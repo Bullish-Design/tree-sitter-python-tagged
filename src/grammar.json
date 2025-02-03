@@ -6378,6 +6378,10 @@
     [
       "match_statement",
       "primary_expression"
+    ],
+    [
+      "comment",
+      "node_tag"
     ]
   ],
   "precedences": [],

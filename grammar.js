@@ -56,6 +56,7 @@ module.exports = grammar({
     [$.print_statement, $.primary_expression],
     [$.type_alias_statement, $.primary_expression],
     [$.match_statement, $.primary_expression],
+    [$.comment, $.node_tag],
   ],
 
   supertypes: $ => [
