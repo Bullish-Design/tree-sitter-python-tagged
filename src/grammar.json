@@ -229,10 +229,6 @@
         {
           "type": "SYMBOL",
           "name": "type_alias_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "node_tag"
         }
       ]
     },
@@ -6345,6 +6341,10 @@
     {
       "type": "SYMBOL",
       "name": "line_continuation"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "node_tag"
     }
   ],
   "conflicts": [
@@ -6414,6 +6414,10 @@
     {
       "type": "SYMBOL",
       "name": "string_end"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "node_tag"
     },
     {
       "type": "SYMBOL",

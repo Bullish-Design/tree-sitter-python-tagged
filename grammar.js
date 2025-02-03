@@ -43,7 +43,7 @@ module.exports = grammar({
     $.comment,
     /[\s\f\uFEFF\u2060\u200B]|\r?\n/,
     $.line_continuation,
-    //$.node_tag,
+    $.node_tag,
   ],
 
   conflicts: $ => [
@@ -78,7 +78,7 @@ module.exports = grammar({
     $._string_content,
     $.escape_interpolation,
     $.string_end,
-    //$.node_tag,
+    $.node_tag,
 
     // Mark comments as external tokens so that the external scanner is always
     // invoked, even if no external token is expected. This allows for better
@@ -186,7 +186,7 @@ module.exports = grammar({
       $.exec_statement,
       $.type_alias_statement,
       //$.compound_node_tag,
-      $.node_tag,
+      //$.node_tag,
     ),
 
     import_statement: $ => seq(
