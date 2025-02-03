@@ -6458,8 +6458,7 @@
     "_suite",
     "_expressions",
     "_left_hand_side",
-    "keyword_identifier",
-    "_compound_node_tag"
+    "keyword_identifier"
   ],
   "supertypes": [
     "_simple_statement",

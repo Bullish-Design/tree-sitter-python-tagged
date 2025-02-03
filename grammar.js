@@ -119,7 +119,7 @@ module.exports = grammar({
     $._expressions,
     $._left_hand_side,
     $.keyword_identifier,
-    $._compound_node_tag,
+    //$._compound_node_tag,
   ],
 
   word: $ => $.identifier,
