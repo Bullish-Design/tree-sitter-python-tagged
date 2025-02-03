@@ -6492,6 +6492,7 @@
   ],
   "inline": [
     "_simple_statement",
+    "_tagged_simple_statements",
     "_compound_statement",
     "_suite",
     "_expressions",
