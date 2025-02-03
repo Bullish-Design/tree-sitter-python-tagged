@@ -40,10 +40,10 @@ module.exports = grammar({
   name: 'python',
 
   extras: $ => [
+    $.node_tag,
     $.comment,
     /[\s\f\uFEFF\u2060\u200B]|\r?\n/,
     $.line_continuation,
-    $.node_tag,
   ],
 
   conflicts: $ => [
@@ -130,7 +130,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => token(seq(
+    node_tag: $ => token(prec(5,seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
@@ -142,7 +142,7 @@ module.exports = grammar({
       ':',                      // id separator
       alias(/[^%]+/, "db_name"),   // name
       '##'
-    )),
+    ))),
 
 
     _compound_node_tag: $ => prec.right(7,seq(
