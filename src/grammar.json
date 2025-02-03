@@ -6260,106 +6260,20 @@
       }
     },
     "comment": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "TOKEN",
-          "content": {
-            "type": "PREC",
-            "value": 5,
-            "content": {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "##"
-                },
-                {
-                  "type": "ALIAS",
-                  "content": {
-                    "type": "PATTERN",
-                    "value": "[^:]+"
-                  },
-                  "named": false,
-                  "value": "db_id"
-                },
-                {
-                  "type": "STRING",
-                  "value": ":"
-                },
-                {
-                  "type": "ALIAS",
-                  "content": {
-                    "type": "PATTERN",
-                    "value": "[^|]+"
-                  },
-                  "named": false,
-                  "value": "db_version_id"
-                },
-                {
-                  "type": "STRING",
-                  "value": "|"
-                },
-                {
-                  "type": "ALIAS",
-                  "content": {
-                    "type": "PATTERN",
-                    "value": "[^|]+"
-                  },
-                  "named": false,
-                  "value": "db_version"
-                },
-                {
-                  "type": "STRING",
-                  "value": "|"
-                },
-                {
-                  "type": "ALIAS",
-                  "content": {
-                    "type": "PATTERN",
-                    "value": "[^:]+"
-                  },
-                  "named": false,
-                  "value": "db_type"
-                },
-                {
-                  "type": "STRING",
-                  "value": ":"
-                },
-                {
-                  "type": "ALIAS",
-                  "content": {
-                    "type": "PATTERN",
-                    "value": "[^%]+"
-                  },
-                  "named": false,
-                  "value": "db_name"
-                },
-                {
-                  "type": "STRING",
-                  "value": "##"
-                }
-              ]
-            }
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "#"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
           }
-        },
-        {
-          "type": "TOKEN",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "#"
-              },
-              {
-                "type": "PATTERN",
-                "value": ".*"
-              }
-            ]
-          }
-        }
-      ]
+        ]
+      }
     },
     "line_continuation": {
       "type": "TOKEN",
@@ -6493,6 +6407,10 @@
     {
       "type": "SYMBOL",
       "name": "string_end"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
     },
     {
       "type": "STRING",

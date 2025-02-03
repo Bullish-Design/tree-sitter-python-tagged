@@ -90,7 +90,7 @@ module.exports = grammar({
     // error recovery, because the external scanner can maintain the overall
     // structure by returning dedent tokens whenever a dedent occurs, even
     // if no dedent is expected.
-    //$.comment,
+    $.comment,
 
     // Allow the external scanner to check for the validity of closing brackets
     // so that it can avoid returning dedent tokens between brackets.
@@ -1265,6 +1265,7 @@ module.exports = grammar({
       $.primary_expression,
     )),
 
+    /*
     comment: $ => choice(token(
       prec(5,
         seq(
@@ -1280,8 +1281,9 @@ module.exports = grammar({
         alias(/[^%]+/, "db_name"),   // name
         '##'
         ))
-      ),token(seq('#', /.*/))),
-
+      ),token(seq('#', /./))),
+    */
+    comment: $ => token(seq('#', /.*/)),
     line_continuation: _ => token(seq('\\', choice(seq(optional('\r'), '\n'), '\0'))),
 
     positional_separator: _ => '/',

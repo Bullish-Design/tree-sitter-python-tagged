@@ -1027,11 +1027,6 @@
     }
   },
   {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "comparison_operator",
     "named": true,
     "fields": {
@@ -3576,6 +3571,10 @@
   {
     "type": "class",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
   },
   {
     "type": "continue",
