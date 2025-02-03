@@ -137,7 +137,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => seq(
+    node_tag: $ => token(seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
@@ -149,7 +149,7 @@ module.exports = grammar({
       ':',                      // id separator
       alias(/[^%]+/, "db_name"),   // name
       '##'
-    ),
+    )),
 
 
     _compound_node_tag: $ => prec.right(7,seq(
@@ -171,7 +171,7 @@ module.exports = grammar({
     _simple_statements: $ => seq(
       sep1($._simple_statement, SEMICOLON),
       optional(SEMICOLON),
-      //optional($.node_tag),
+      optional($.node_tag),
       $._newline,
     ),
 
@@ -1283,7 +1283,7 @@ module.exports = grammar({
         ))
       ),token(seq('#', /./))),
     */
-    comment: $ => token(seq('#', /.*/)),
+    comment: _ => token(seq('#', /.*/)),
     line_continuation: _ => token(seq('\\', choice(seq(optional('\r'), '\n'), '\0'))),
 
     positional_separator: _ => '/',
