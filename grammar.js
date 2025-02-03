@@ -165,7 +165,7 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $._simple_statements,
-      //$._tagged_simple_statements,
+      $._tagged_simple_statements,
       //$._tagged_compound_statement,
       $._compound_statement,
     ),
@@ -173,9 +173,8 @@ module.exports = grammar({
     // Simple statements
 
     _tagged_simple_statements: $ => seq(
-      sep1($._simple_statement, SEMICOLON),
+      sep1($._tagged_simple_statement, SEMICOLON),
       optional(SEMICOLON),
-      $.node_tag,
       $._newline,
     ),
 
@@ -188,6 +187,11 @@ module.exports = grammar({
       //optional($.node_tag),
       $._newline,
     ),
+
+    _tagged_simple_statement: $ => seq(
+      $._simple_statement,
+      $.node_tag,
+      ),
 
     _simple_statement: $ => choice(
       $.future_import_statement,

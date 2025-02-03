@@ -113,6 +113,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "_tagged_simple_statements"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_compound_statement"
         }
       ]
@@ -125,7 +129,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_simple_statement"
+              "name": "_tagged_simple_statement"
             },
             {
               "type": "REPEAT",
@@ -138,7 +142,7 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "_simple_statement"
+                    "name": "_tagged_simple_statement"
                   }
                 ]
               }
@@ -156,10 +160,6 @@
               "type": "BLANK"
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "node_tag"
         },
         {
           "type": "SYMBOL",
@@ -210,6 +210,19 @@
         {
           "type": "SYMBOL",
           "name": "_newline"
+        }
+      ]
+    },
+    "_tagged_simple_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_simple_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "node_tag"
         }
       ]
     },
