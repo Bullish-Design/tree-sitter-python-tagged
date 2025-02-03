@@ -45,7 +45,7 @@ module.exports = grammar({
 
   extras: $ => [
     //$.node_tag,
-    //$.comment,
+    $.comment,
     /[\s\f\uFEFF\u2060\u200B]|\r?\n/,
     $.line_continuation,
   ],
@@ -124,7 +124,7 @@ module.exports = grammar({
     $._expressions,
     $._left_hand_side,
     $.keyword_identifier,
-    $.comment,
+    //$.comment,
     //$.node_tag,
     //$._compound_node_tag,
   ],
@@ -137,7 +137,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => token(seq(
+    node_tag: $ => seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
@@ -149,7 +149,7 @@ module.exports = grammar({
       ':',                      // id separator
       alias(/[^%]+/, "db_name"),   // name
       '##'
-    )),
+    ),
 
 
     _compound_node_tag: $ => prec.right(7,seq(
@@ -1265,7 +1265,22 @@ module.exports = grammar({
       $.primary_expression,
     )),
 
-    comment: $ => token(choice(prec(5,$.node_tag),seq('#', /.*/))),
+    comment: $ => token(choice(
+      prec(5,
+        seq(
+        '##',
+        alias(/[^:]+/, "db_id"),   // id
+        ':',                      // id separator
+        alias(/[^|]+/, "db_version_id"),   // version id
+        '|',
+        alias(/[^|]+/, "db_version"),   // version
+        '|',
+        alias(/[^:]+/, "db_type"),   // type
+        ':',                      // id separator
+        alias(/[^%]+/, "db_name"),   // name
+        '##'
+        )
+      ),seq('#', /.*/))),
 
     line_continuation: _ => token(seq('\\', choice(seq(optional('\r'), '\n'), '\0'))),
 
