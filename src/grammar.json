@@ -15,6 +15,10 @@
           {
             "type": "SYMBOL",
             "name": "_tagged_statement"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_block_node_tag"
           }
         ]
       }
@@ -96,7 +100,7 @@
         ]
       }
     },
-    "_compound_node_tag": {
+    "_block_node_tag": {
       "type": "PREC_RIGHT",
       "value": 7,
       "content": {

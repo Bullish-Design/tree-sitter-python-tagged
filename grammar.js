@@ -140,7 +140,7 @@ module.exports = grammar({
 
     
 
-    module: $ => repeat(choice($._statement, $._tagged_statement)),
+    module: $ => repeat(choice($._statement, $._tagged_statement, $._block_node_tag)),
 
     _node_tag: $ => token(seq(
       '##',
@@ -157,7 +157,7 @@ module.exports = grammar({
     )),
 
 
-    _compound_node_tag: $ => prec.right(7,seq(
+    _block_node_tag: $ => prec.right(7,seq(
       $._node_tag,
       $._newline,
     )),
