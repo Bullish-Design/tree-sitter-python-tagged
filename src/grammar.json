@@ -6260,11 +6260,11 @@
       }
     },
     "comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "TOKEN",
+          "content": {
             "type": "PREC",
             "value": 5,
             "content": {
@@ -6341,8 +6341,11 @@
                 }
               ]
             }
-          },
-          {
+          }
+        },
+        {
+          "type": "TOKEN",
+          "content": {
             "type": "SEQ",
             "members": [
               {
@@ -6355,8 +6358,8 @@
               }
             ]
           }
-        ]
-      }
+        }
+      ]
     },
     "line_continuation": {
       "type": "TOKEN",
@@ -6490,10 +6493,6 @@
     {
       "type": "SYMBOL",
       "name": "string_end"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "comment"
     },
     {
       "type": "STRING",
