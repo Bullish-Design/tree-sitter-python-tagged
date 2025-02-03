@@ -752,10 +752,6 @@
         {
           "type": "_simple_statement",
           "named": true
-        },
-        {
-          "type": "node_tag",
-          "named": true
         }
       ]
     }
@@ -2447,10 +2443,6 @@
         {
           "type": "_simple_statement",
           "named": true
-        },
-        {
-          "type": "node_tag",
-          "named": true
         }
       ]
     }
@@ -3687,10 +3679,6 @@
   {
     "type": "match",
     "named": false
-  },
-  {
-    "type": "node_tag",
-    "named": true
   },
   {
     "type": "none",
