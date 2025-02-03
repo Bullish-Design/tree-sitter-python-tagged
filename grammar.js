@@ -16,9 +16,12 @@ const PREC = {
   lambda: -2,
   typed_parameter: -1,
   conditional: -1,
-
+  
   parenthesized_expression: 1,
   parenthesized_list_splat: 1,
+
+  comment: 2,
+
   or: 10,
   and: 11,
   not: 12,
@@ -133,7 +136,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => token.immediate(seq(
+    node_tag: $ => token.immediate(prec(PREC.node_tag,seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
@@ -145,7 +148,7 @@ module.exports = grammar({
       ':',                      // id separator
       alias(/[^%]+/, "db_name"),   // name
       '##'
-    )),
+    ))),
 
 
     _compound_node_tag: $ => prec.right(7,seq(
@@ -1261,7 +1264,7 @@ module.exports = grammar({
       $.primary_expression,
     )),
 
-    comment: _ => token(seq('#', /.*/)),
+    comment: _ => token(prec(PREC.comment, seq('#', /.*/))),
 
     line_continuation: _ => token(seq('\\', choice(seq(optional('\r'), '\n'), '\0'))),
 
