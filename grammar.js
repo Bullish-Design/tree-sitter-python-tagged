@@ -124,6 +124,7 @@ module.exports = grammar({
     $._expressions,
     $._left_hand_side,
     $.keyword_identifier,
+    $.comment,
     //$.node_tag,
     //$._compound_node_tag,
   ],

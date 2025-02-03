@@ -6443,7 +6443,8 @@
     "_suite",
     "_expressions",
     "_left_hand_side",
-    "keyword_identifier"
+    "keyword_identifier",
+    "comment"
   ],
   "supertypes": [
     "_simple_statement",
