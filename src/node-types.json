@@ -756,6 +756,10 @@
         {
           "type": "node_tag",
           "named": true
+        },
+        {
+          "type": "tagged_compound_statement",
+          "named": true
         }
       ]
     }
@@ -2451,6 +2455,10 @@
         {
           "type": "node_tag",
           "named": true
+        },
+        {
+          "type": "tagged_compound_statement",
+          "named": true
         }
       ]
     }
@@ -2899,6 +2907,25 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "tagged_compound_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "_compound_statement",
+          "named": true
+        },
+        {
+          "type": "node_tag",
+          "named": true
+        }
+      ]
     }
   },
   {
