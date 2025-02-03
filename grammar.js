@@ -130,7 +130,7 @@ module.exports = grammar({
     $.keyword_identifier,
     //$.comment,
     //$._node_tag,
-    //$._compound_node_tag,
+    //$._block_node_tag,
   ],
 
   word: $ => $.identifier,
