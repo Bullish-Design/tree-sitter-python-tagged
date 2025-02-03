@@ -43,6 +43,7 @@ module.exports = grammar({
     $.comment,
     /[\s\f\uFEFF\u2060\u200B]|\r?\n/,
     $.line_continuation,
+    $.node_tag,
   ],
 
   conflicts: $ => [
