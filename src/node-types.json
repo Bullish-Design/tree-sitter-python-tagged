@@ -2474,6 +2474,11 @@
     }
   },
   {
+    "type": "node_tag",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "nonlocal_statement",
     "named": true,
     "fields": {},
@@ -3679,10 +3684,6 @@
   {
     "type": "match",
     "named": false
-  },
-  {
-    "type": "node_tag",
-    "named": true
   },
   {
     "type": "none",

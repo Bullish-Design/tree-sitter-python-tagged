@@ -11,10 +11,10 @@
       }
     },
     "node_tag": {
-      "type": "TOKEN",
+      "type": "PREC",
+      "value": 5,
       "content": {
-        "type": "PREC",
-        "value": 5,
+        "type": "TOKEN",
         "content": {
           "type": "SEQ",
           "members": [
@@ -6418,10 +6418,6 @@
     {
       "type": "SYMBOL",
       "name": "string_end"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "node_tag"
     },
     {
       "type": "SYMBOL",
