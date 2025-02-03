@@ -111,7 +111,7 @@ module.exports = grammar({
             $._block_not_section)
         ),
   */
-    inline: $ => [
+  inline: $ => [
     $._simple_statement,
     //$.tagged_compound_statement,
     $._compound_statement,
