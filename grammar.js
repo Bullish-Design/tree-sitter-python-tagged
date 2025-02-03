@@ -173,8 +173,8 @@ module.exports = grammar({
 
     _tagged_statement: $ => seq(
       $._tagged_simple_statements,
-      $._block_node_tag,
-      //$._tagged_compound_statement,
+      //$._block_node_tag,
+      $._tagged_compound_statement,
     ),
     // Simple statements
 
@@ -619,7 +619,8 @@ module.exports = grammar({
     )),
 
     block: $ => prec.right(seq(
-      repeat(choice($._statement, $._tagged_statement)),
+      //repeat(choice($._statement, $._tagged_statement)),
+      repeat($._statement),
       $._dedent,
     )),
 

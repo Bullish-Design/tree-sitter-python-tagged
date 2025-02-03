@@ -135,7 +135,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_block_node_tag"
+          "name": "_tagged_compound_statement"
         }
       ]
     },
@@ -2445,17 +2445,8 @@
           {
             "type": "REPEAT",
             "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "_statement"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_tagged_statement"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "_statement"
             }
           },
           {
