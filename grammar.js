@@ -145,10 +145,10 @@ module.exports = grammar({
     ))),
 
 
-    compound_node_tag: $ => seq(
+    compound_node_tag: $ => prec(5,seq(
       $.node_tag,
       $._newline,
-    ),
+    )),
 
 
 
@@ -163,7 +163,7 @@ module.exports = grammar({
     _simple_statements: $ => seq(
       sep1($._simple_statement, SEMICOLON),
       optional(SEMICOLON),
-      //optional($.node_tag),
+      optional($.node_tag),
       $._newline,
     ),
 
@@ -184,8 +184,8 @@ module.exports = grammar({
       $.nonlocal_statement,
       $.exec_statement,
       $.type_alias_statement,
-      //$.compound_node_tag,
-      $.node_tag,
+      $.compound_node_tag,
+      //$.node_tag,
     ),
 
     import_statement: $ => seq(

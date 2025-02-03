@@ -54,6 +54,10 @@
         "named": true
       },
       {
+        "type": "compound_node_tag",
+        "named": true
+      },
+      {
         "type": "continue_statement",
         "named": true
       },
@@ -83,10 +87,6 @@
       },
       {
         "type": "import_statement",
-        "named": true
-      },
-      {
-        "type": "node_tag",
         "named": true
       },
       {
@@ -756,6 +756,10 @@
         {
           "type": "_simple_statement",
           "named": true
+        },
+        {
+          "type": "node_tag",
+          "named": true
         }
       ]
     }
@@ -1110,6 +1114,21 @@
         },
         {
           "type": "integer",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "compound_node_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "node_tag",
           "named": true
         }
       ]
@@ -2446,6 +2465,10 @@
         },
         {
           "type": "_simple_statement",
+          "named": true
+        },
+        {
+          "type": "node_tag",
           "named": true
         }
       ]

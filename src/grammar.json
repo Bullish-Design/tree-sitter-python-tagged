@@ -92,17 +92,21 @@
       }
     },
     "compound_node_tag": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "node_tag"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_newline"
-        }
-      ]
+      "type": "PREC",
+      "value": 5,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "node_tag"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_newline"
+          }
+        ]
+      }
     },
     "_statement": {
       "type": "CHOICE",
@@ -151,6 +155,18 @@
             {
               "type": "STRING",
               "value": ";"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "node_tag"
             },
             {
               "type": "BLANK"
@@ -232,7 +248,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "node_tag"
+          "name": "compound_node_tag"
         }
       ]
     },
