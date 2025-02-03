@@ -122,10 +122,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_tagged_simple_statements"
-        },
-        {
-          "type": "SYMBOL",
           "name": "_compound_statement"
         }
       ]
