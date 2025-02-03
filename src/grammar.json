@@ -11,84 +11,80 @@
       }
     },
     "node_tag": {
-      "type": "PREC",
-      "value": 5,
+      "type": "IMMEDIATE_TOKEN",
       "content": {
-        "type": "TOKEN",
-        "content": {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "##"
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "##"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^:]+"
             },
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "PATTERN",
-                "value": "[^:]+"
-              },
-              "named": false,
-              "value": "db_id"
+            "named": false,
+            "value": "db_id"
+          },
+          {
+            "type": "STRING",
+            "value": ":"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^|]+"
             },
-            {
-              "type": "STRING",
-              "value": ":"
+            "named": false,
+            "value": "db_version_id"
+          },
+          {
+            "type": "STRING",
+            "value": "|"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^|]+"
             },
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "PATTERN",
-                "value": "[^|]+"
-              },
-              "named": false,
-              "value": "db_version_id"
+            "named": false,
+            "value": "db_version"
+          },
+          {
+            "type": "STRING",
+            "value": "|"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^:]+"
             },
-            {
-              "type": "STRING",
-              "value": "|"
+            "named": false,
+            "value": "db_type"
+          },
+          {
+            "type": "STRING",
+            "value": ":"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^%]+"
             },
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "PATTERN",
-                "value": "[^|]+"
-              },
-              "named": false,
-              "value": "db_version"
-            },
-            {
-              "type": "STRING",
-              "value": "|"
-            },
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "PATTERN",
-                "value": "[^:]+"
-              },
-              "named": false,
-              "value": "db_type"
-            },
-            {
-              "type": "STRING",
-              "value": ":"
-            },
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "PATTERN",
-                "value": "[^%]+"
-              },
-              "named": false,
-              "value": "db_name"
-            },
-            {
-              "type": "STRING",
-              "value": "##"
-            }
-          ]
-        }
+            "named": false,
+            "value": "db_name"
+          },
+          {
+            "type": "STRING",
+            "value": "##"
+          }
+        ]
       }
     },
     "_compound_node_tag": {
@@ -6442,8 +6438,7 @@
     "_suite",
     "_expressions",
     "_left_hand_side",
-    "keyword_identifier",
-    "node_tag"
+    "keyword_identifier"
   ],
   "supertypes": [
     "_simple_statement",
@@ -6451,7 +6446,6 @@
     "expression",
     "primary_expression",
     "pattern",
-    "parameter",
-    "node_tag"
+    "parameter"
   ]
 }

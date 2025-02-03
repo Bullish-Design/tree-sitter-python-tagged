@@ -67,7 +67,7 @@ module.exports = grammar({
     $.primary_expression,
     $.pattern,
     $.parameter,
-    $.node_tag,
+    //$.node_tag,
     //$._compound_node_tag,
   ],
 
@@ -120,7 +120,7 @@ module.exports = grammar({
     $._expressions,
     $._left_hand_side,
     $.keyword_identifier,
-    $.node_tag,
+    //$.node_tag,
     //$._compound_node_tag,
   ],
 
@@ -132,7 +132,7 @@ module.exports = grammar({
 
     module: $ => repeat($._statement),
 
-    node_tag: $ => prec(5,token(seq(
+    node_tag: $ => token.immediate(seq(
       '##',
       alias(/[^:]+/, "db_id"),   // id
       ':',                      // id separator
@@ -144,7 +144,7 @@ module.exports = grammar({
       ':',                      // id separator
       alias(/[^%]+/, "db_name"),   // name
       '##'
-    ))),
+    )),
 
 
     _compound_node_tag: $ => prec.right(7,seq(
