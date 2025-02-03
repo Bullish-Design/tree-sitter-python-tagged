@@ -160,7 +160,7 @@ module.exports = grammar({
     _simple_statements: $ => seq(
       sep1($._simple_statement, SEMICOLON),
       optional(SEMICOLON),
-      //optional($.node_tag),
+      optional($.node_tag),
       $._newline,
     ),
 
